@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Enter a string: ");
+        String input = scanner.nextLine();
+        
+        String result = "";
+        
+        // Loop through each character of the string
+        for (int i = 0; i < input.length(); i++) {
+            char ch = input.charAt(i);
+            
+            // If it is uppercase, change to lowercase
+            if (Character.isUpperCase(ch)) {
+                result += Character.toLowerCase(ch);
+            } 
+            // If it is lowercase, change to uppercase
+            else if (Character.isLowerCase(ch)) {
+                result += Character.toUpperCase(ch);
+            } 
+            // Keep spaces and symbols exactly the same
+            else {
+                result += ch;
+            }
+        }
+        
+        System.out.println(result);
+        scanner.close();
+    }
+}
