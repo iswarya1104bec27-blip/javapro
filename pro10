@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+// Changed class name to match Main.java
+public class Main { 
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Enter a positive integer: ");
+        int number = scanner.nextInt();
+        
+        while (number > 9) {
+            int sum = 0;
+            while (number > 0) {
+                sum = sum + (number % 10);
+                number = number / 10;
+            }
+            number = sum;
+        }
+        
+        System.out.println("Digital Root: " + number);
+        scanner.close();
+    }
+}
