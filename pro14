@@ -1,0 +1,43 @@
+import java.util.Scanner;
+
+public class Main {
+
+    // 1. Recharge by amount only
+    public static void recharge(int amount) {
+        System.out.println("Recharge Amount: " + amount);
+    }
+
+    // 2. Overloaded Method: Recharge by amount and validity
+    public static void recharge(int amount, int validity) {
+        System.out.println("Recharge Amount: " + amount);
+        System.out.println("Validity: " + validity + " Days");
+    }
+
+    // 3. Overloaded Method: Recharge by amount, validity, and data pack
+    public static void recharge(int amount, int validity, String data) {
+        System.out.println("Recharge Amount: " + amount);
+        System.out.println("Validity: " + validity + " Days");
+        System.out.println("Data Pack: " + data);
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Scenario 1: Only amount
+        int amt1 = scanner.nextInt();
+        recharge(amt1);
+
+        // Scenario 2: Amount and validity
+        int amt2 = scanner.nextInt();
+        int val2 = scanner.nextInt();
+        recharge(amt2, val2);
+
+        // Scenario 3: Amount, validity, and data pack
+        int amt3 = scanner.nextInt();
+        int val3 = scanner.nextInt();
+        String data3 = scanner.next();
+        recharge(amt3, val3, data3);
+
+        scanner.close();
+    }
+}
