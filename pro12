@@ -1,0 +1,38 @@
+import java.util.Scanner;
+
+public class Main {
+    
+    // 1. Static method to find Gross Salary
+    public static int calculateGross(int basic, int allowance) {
+        return basic + allowance;
+    }
+    
+    // 2. Static method to find Net Salary
+    public static int calculateNet(int gross, int deduction) {
+        return gross - deduction;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        // Take inputs
+        System.out.print("Basic Salary = ");
+        int basic = scanner.nextInt();
+        
+        System.out.print("Allowance = ");
+        int allowance = scanner.nextInt();
+        
+        System.out.print("Deduction = ");
+        int deduction = scanner.nextInt();
+        
+        // Call static methods directly without creating an object
+        int grossSalary = calculateGross(basic, allowance);
+        int netSalary = calculateNet(grossSalary, deduction);
+        
+        // Print outputs
+        System.out.println("Gross Salary = " + grossSalary);
+        System.out.println("Net Salary = " + netSalary);
+        
+        scanner.close();
+    }
+}
