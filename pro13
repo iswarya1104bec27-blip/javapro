@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Enter a string: ");
+        String text = scanner.nextLine();
+        
+        // Convert the string into an array of characters
+        char[] characters = text.toCharArray();
+        
+        // Loop through each character in the array
+        for (int i = 0; i < characters.length; i++) {
+            // Skip this character if it has already been processed and counted
+            if (characters[i] == '0') {
+                continue;
+            }
+            
+            int count = 1;
+            
+            // Loop through the rest of the string to find matches
+            for (int j = i + 1; j < characters.length; j++) {
+                if (characters[i] == characters[j]) {
+                    count++;
+                    // Mark the matching character as '0' so we don't count it again
+                    characters[j] = '0'; 
+                }
+            }
+            
+            // Print the final frequency for this specific character
+            System.out.println(characters[i] + " : " + count);
+        }
+        
+        scanner.close();
+    }
+}
